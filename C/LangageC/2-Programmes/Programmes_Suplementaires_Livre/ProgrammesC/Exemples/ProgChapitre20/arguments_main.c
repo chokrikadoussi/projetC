@@ -1,0 +1,16 @@
+/* ---------------- */
+/* arguments_main.c */
+/* ---------------- */
+#include <stdio.h>
+
+main(int argc, char *argv[])
+{
+ int i ;
+
+ printf("--- %d arguments---\n",argc);
+ for (i=0;i<argc;i++)
+ {
+   printf("Argument %d : %s\n",i,argv[i]);
+ }
+}
+
