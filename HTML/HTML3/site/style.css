@@ -40,6 +40,31 @@ h1, h2 {
     color: var(--bleu-marine);
 }
 
-.liste {
-    padding: inherit;
+h3 {
+    color: var(--bleu-clair)
+}
+
+.lien-accueil {
+    color: var(--bleu-marine);
+    font-weight: 700;
+}
+
+.description {
+    display: flex;
+    padding-bottom: 15px;;
+    border-bottom: 1px solid var(--bleu-clair);
+}
+
+.description > img {
+    margin-right: 5px;
+}
+
+.liste ul {
+    list-style: url("images/check.png");
+}
+
+.liste li {
+    color: var(--bleu-marine);
+    font-weight: 700;
+    font-size: 16px;
 }
