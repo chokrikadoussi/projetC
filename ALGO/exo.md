@@ -223,3 +223,49 @@ Début
         ECRIRE "Contrat refusé"
     FINSI
 Fin
+
+### Exo 8
+
+> A (RE)FAIRE
+
+## Partie 5
+
+### Exo 1
+
+Début
+    Variable num en numérique
+    num <- 0
+    TantQue num < 1 OU num > 3 ALORS
+        ECRIRE "Entrez un numéro entre 1 et 3 :"
+        LIRE num
+    FinTantQue
+Fin
+
+### Exo 2
+
+Début
+    Variable num en numérique
+    ECRIRE "Entrez un numéro entre 10 et 20 :"
+    LIRE num
+    TantQue num < 10 OU num > 20 ALORS
+        SI num < 10  ALORS
+            ECRIRE "Plus grand :"
+        SINONSI num > 20 ALORS
+            ECRIRE "Plus petit :"
+        FINSI
+        LIRE num
+    FinTantQue
+Fin
+
+### Exo 3
+
+Début
+    Variables i, num en numérique
+    ECRIRE "Entrez un numéro : "
+    LIRE num
+    i <- num + 10
+    TantQue num < i ALORS
+        num <- num + 1
+        ECRIRE num
+    FinTantQue
+Fin
