@@ -1,0 +1,45 @@
+:root {
+    --noir: #000000;
+    --bleu-clair: #87948e;
+    --bleu-marine: #2a455b;
+    --bg-body: #d9d1c6;
+    --bg-block: #b9c0c6;
+}
+
+* {
+    box-sizing: border-box;
+    /*
+    margin: 0;
+    padding: 0;
+    */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    background-color: var(--bg-body);
+}
+
+header, nav, main, footer {
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    border: 5px solid #ffffff;
+    border-radius: 10px;
+}
+
+header, nav, footer {
+    background-color: var(--bg-block);
+}
+
+main {
+    background-color: #ffffff;
+}
+
+h1, h2 {
+    color: var(--bleu-marine);
+}
+
+.liste {
+    padding: inherit;
+}
