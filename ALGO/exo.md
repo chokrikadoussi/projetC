@@ -148,7 +148,7 @@ Début
     Variables Age, Sexe en numériques
     ECRIRE "Entrez votre age et sexe : "
     LIRE Age, Sexe
-    SI Age < 18 OU Sexe = "Homme" ET Age <= 20 OU Sexe = "Femme" ET Age > 35 ALORS
+    SI Age < 18 OU (Sexe = "Homme" ET Age <= 20) OU (Sexe = "Femme" ET Age > 35) ALORS
         ECRIRE "Impôt : 0 euros"
     SINON
         ECRIRE "Impôt : X euros"
@@ -182,11 +182,44 @@ Fin
 
 ### Exo 7
 
+Catégorie :
+0 => refusé
+1 => rouge
+2 => orange
+3 => vert
+4 => bleu
+
 Début
-    Variables Age, Permis, Accident, Ancienneté en numériques
-    ECRIRE "Entrez votre âge, ancienneté de permis, nombre d'accident et anciennté client (en années) : "
-    LIRE Age, Permis, Accident, Ancienneté
-    SI Accident > 2 ALORS
-        ECRIRE "Refusé"
-    SINONSI Accident > 1 ....
+    Variables age, permis, nb_acc, fidelite, categorie en numérique
+    Variable a, p en booléens
+    ECRIRE "Entrez votre age, année de permis, nombre d'accident, nombre d'année de fidélité :"
+    LIRE age, permis, nb_acc, fidelite
+    a <- age > 25
+    p <- permis > 2
+    SI a et p ALORS
+        categorie <- 3
+    SINONSI a xor p ALORS
+        categorie <- 2
+    SINON
+        categorie <- 1
+    FINSI
+    SI fidelite >= 5 ET categorie > 0 ALORS
+        categorie <- categorie + 1
+    FINSI
+    ECRIRE "Votre contrat est : ", categorie - nb_acc
+
+    
+> L'exercice demande de "traiter [le] problème" ; s'il faut ajouter la traduction de la catégorie de contrat, voici l'algo :
+
+    SI categorie = 1 ALORS
+        ECRIRE "Contrat rouge"
+    SINONSI categorie = 2 ALORS
+        ECRIRE "Contrat orange"
+    SINONSI categorie = 3 ALORS
+        ECRIRE "Contrat vert"
+    SINONSI categorie = 4 ALORS
+        ECRIRE "Contrat bleu"
+    SINON
+        ECRIRE "Contrat refusé"
+    FINSI
 Fin
