@@ -269,3 +269,200 @@ Début
         ECRIRE num
     FinTantQue
 Fin
+
+### Exo 4
+
+Début
+    Variables i, num en numériques
+    ECRIRE "Entrez un numéro : "
+    LIRE num
+    POUR i <- 1 à 10
+        ECRIRE num + i
+    i SUIVANT
+Fin
+
+### Exo 5
+
+Début
+    Variables i, num en numériques
+    ECRIRE "Entrez un numéro : "
+    LIRE num
+    ECRIRE "Table de ", num, " : "
+    POUR i <- 1 A 10
+        ECRIRE num, " x ", i, " = ", num * i
+    i SUIVANT
+Fin
+
+### Exo 6
+
+Début
+    Variable num, i, total en numérique
+    ECRIRE "Entrez un numéro :"
+    LIRE num
+    total <- 0
+    POUR i <- 1 A num
+        total <- total + i
+    i SUIVANT
+    ECRIRE "La somme est : ", total
+Fin
+
+### Exo 7
+
+Début
+    Variable num, i, total en numérique
+    ECRIRE "Entrez un numéro :"
+    LIRE num
+    total <- 1
+    POUR i <- 2 A num
+        total <- total * i
+    i SUIVANT
+    ECRIRE "La somme est : ", total
+Fin
+
+**Valeurs tests :** 3
+
+### Exo 8
+
+Début
+    Variables num, i, max en numériques
+    ECRIRE "Entre le nombre numéro 1"
+    LIRE max
+    POUR i <- 2 A 20
+        ECRIRE "Entrez le nombre numéro ", i
+        LIRE num
+        SI num > max ALORS
+            max <- num
+        FINSI
+    i SUIVANT
+    ECRIRE "Le plus grand de ces nombres est : ", max
+Fin
+
+---
+
+Début
+    Variables num, i, max, index en numériques
+    ECRIRE "Entrez le nombre numéro 1"
+    LIRE num
+    max <- num
+    index <- 1
+    POUR i <- 2 A 20
+        ECRIRE "Entrez le nombre numéro ", i
+        LIRE num
+        SI num > max ALORS
+            max <- num
+            index <- i
+        FINSI
+    i SUIVANT
+    ECRIRE "Le plus grand de ces nombres est : ", max
+    ECRIRE "C'était le nombre numéro : ", index
+Fin
+
+
+<> Il existe une seconde façon de faire, où tous les cas sont inclus dans la boucle POUR (voir ci-dessous).
+
+
+### Exo 8 (2ème version)
+
+Début
+    Variables num, i, max en numériques
+    POUR i <- 1 A 20
+        ECRIRE "Entrez le nombre numéro ", i
+        LIRE num
+        SI i = 1 ALORS
+            max <- num
+        SINONSI num > max ALORS
+            max <- num
+        FINSI
+    i SUIVANT
+    ECRIRE "Le plus grand de ces nombres est : ", max
+Fin
+
+Début
+    Variables num, i, max en numériques
+    max <-- ???
+    POUR i <- 1 A 20
+        ECRIRE "Entrez le nombre numéro ", i
+        LIRE num
+        SI i = 1  OU num > max ALORS
+            max <- num
+        FINSI
+    i SUIVANT
+    ECRIRE "Le plus grand de ces nombres est : ", max
+Fin
+
+### Exo 9
+
+Début
+    Variables num, i, max, index en numériques
+    ECRIRE "Entre le nombre numéro 1"
+    LIRE num
+    max <- num
+    index <- 1
+    i <- 2
+    TantQue num != 0 ALORS
+        ECRIRE "Entrez le nombre numéro ", i
+        LIRE num
+        SI num > max ALORS
+            max <- num
+            index <- i
+        FINSI
+        i <- i + 1
+    FinTantQue
+    ECRIRE "Le plus grand de ces nombres est : ", max
+    ECRIRE "C'était le nombre numéro : ", index
+Fin
+
+### Exo 10
+
+Début
+    Variables prix, total, montant en numériques
+    total <- 0
+    TantQue prix != 0 ALORS
+        ECRIRE "Entrez le prix d'un article"
+        LIRE prix
+        total <- total + prix
+    FinTantQue
+    ECRIRE "Le total est : ", total
+    ECRIRE "Montant payé : "
+    LIRE montant
+    prix <- montant - total
+    TantQue prix > 0 ALORS
+        SI prix >= 10 ALORS
+            ECRIRE "10 euros"
+            prix <- prix - 10
+        SINONSI prix >= 5 ALORS
+            ECRIRE "5 euros"
+            prix <- prix - 5
+        SINON
+            ECRIRE "1 euro"
+            prix <- prix - 1
+        FINSI
+    FinTantQue
+Fin
+
+### Exo 11
+
+Début
+    Variables n, p, X, Y, i, n_fac, p_fac, np_fac en numériques
+    ECRIRE "Nombre cheveaux partants, Nombre cheveaux joués : "
+    LIRE n, p
+    n_fac <- 1
+    p_fac <-  1
+    np_fac <- 1
+
+    POUR i <- 2 à n
+        n_fac <- n_fac * i
+        SI i <= p ALORS
+            p_fac <- p_fac * i
+        FINSI
+        SI  i <= n - p ALORS
+            np_fac <- np_fac * i
+        FINSI
+    i SUIVANT
+
+    X <-  n_fac / np_fac
+    Y <- (1 / p_fac) * X
+    ECRIRE "Dans l'ordre : une chance sur ", X, " de gagner"
+    ECRIRE "Dans le désordre : une chance sur ", Y, " de gagner"
+
+Fin
