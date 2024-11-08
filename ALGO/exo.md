@@ -466,3 +466,204 @@ Début
     ECRIRE "Dans le désordre : une chance sur ", Y, " de gagner"
 
 Fin
+
+## Partie 6
+
+### Exo 1
+
+Début
+    Variables T[6], i en numériques
+    Pour  i <- 0 à 6
+        T[i] <- 0
+    i SUIVANT
+Fin
+
+### Exo 2
+
+Début
+    Variables T[5] en caractères
+    T[0] <- "A"
+    T[1] <- "E"
+    T[2] <- "I"
+    T[3] <- "O"
+    T[4] <- "U"
+    T[5] <- "Y"
+Fin
+
+### Exo 3
+
+Début
+    Variables T[8], i en numériques
+    Pour  i <- 0 à 8
+        ECRIRE "Entrez une note : "
+        LIRE T[i]
+    i SUIVANT
+Fin
+
+### Exo 4
+
+> Affiche les carrés des 6 premiers nombres (départ à 0)
+
+Début
+    Variables i, T[5] en numériques
+    Pour  i <- 0 à 5
+        T[i] <- i * i
+        ECRIRE T[i]
+    i SUIVANT
+Fin
+
+### Exo 5
+
+> Stock nombre impair
+
+Début
+    Variables i, k, T[6] en numériques
+    k <- 1
+    Pour i <- 0 à 6
+        T[i] <- k + i
+        k <- k + 1
+    i SUIVANT
+Fin
+
+### Exo 6
+
+> Suite Fibonacci
+
+Début
+    Variables Suite[7], i en numériques
+    Suite[0] <- 1
+    Suite[1] <- 1
+    Pour  i <- 2 à 7
+        Suite[i] <- Suite[i - 1] + Suite[i - 2]
+        ECRIRE Suite[i]
+    i SUIVANT
+Fin
+
+### Exo 7
+
+Début
+    Variables T[8], i, moyenne en numériques
+    moyenne <- 0
+    Pour  i <- 0 à 8
+        ECRIRE "Entrez une note : "
+        LIRE T[i]
+        moyenne <- moyenne + T[i]
+    i SUIVANT
+    moyenne <- moyenne / 9
+    ECRIRE "Moyenne : ", moyenne
+Fin
+
+### Exo 8
+
+> O est comptabilisé comme un chiffre positif
+
+Début
+    Variables dim, T[], i, neg en numériques
+    neg <- 0
+    ECRIRE "Combien de valeurs ? "
+    LIRE dim
+    REDIM T[dim-1]
+    Pour i <- 0 à dim - 1
+        ECRIRE "Valeur ", i + 1, " : "
+        LIRE T[i]
+        SI T[i] < 0 ALORS
+            neg <- neg + 1
+        FINSI
+    i SUIVANT
+    ECRIRE "Nombre de valeurs négatives : ", neg
+    ECRIRE "Nombre de valeurs positives : ", dim - neg
+Fin
+
+### Exo 9
+
+Début
+    Variables T[], sum, n, i en numériques
+    /* SAISI DU TABLEAU, n étant la taille du tableau */
+    Pour i <- 0 à n
+        sum <- sum + T[i]
+    i SUIVANT
+    ECRIRE "Somme totale : ", sum
+Fin
+
+### Exo 10
+
+Début
+    Variables Ta[], Tb[], T[], i, n en numériques
+    /* SAISI DU TABLEAU, n étant la taille du tableau */
+    Pour i <- 0 à n
+        T[i] <- Ta[i] + Tb[i]
+    i SUIVANT
+Fin
+
+### Exo 11
+
+Début
+    Variables Ta[], Tb[], sch, i, j en numériques
+    /* SAISI DU TABLEAU, *n* étant la taille de Ta et *p* de Tb */
+    sch <- 0
+    Pour i <- 0 à p
+        Pour j <- 0 à n
+            sch <- sch + Ta[i] * Tb[j]
+        j SUIVANT
+    i SUIVANT
+    ECRIRE "Schtroumpf : ", sch
+Fin
+
+### Exo 12
+
+Début
+    Variables dim, T[], i en numériques
+    ECRIRE "Combien de valeurs ? "
+    LIRE dim
+    REDIM T[dim-1]
+    Pour i <- 0 à dim - 1
+        ECRIRE "Valeur ", i + 1, " : "
+        LIRE T[i]
+        T[i] <- T[i] + 1
+        ECRIRE T[i]
+    i SUIVANT
+Fin
+
+### Exo 13
+
+Début
+    Variables dim, T[], i, max, index en numériques
+    ECRIRE "Combien de valeurs ? "
+    LIRE dim
+    REDIM T[dim-1]
+    Pour i <- 0 à dim - 1
+        ECRIRE "Valeur ", i + 1, " : "
+        LIRE T[i]
+    i SUIVANT
+    max <- T[0]
+    Pour i <- 0 à dim - 1
+        SI T[i] > max ALORS
+            max <- T[i]
+            index <- i
+        FINSI
+    i SUIVANT
+    ECRIRE "Le max est ", max, " à la position ", index + 1
+Fin
+
+### Exo 14
+
+Début
+    Variables dim, T[], i, moy, sup en numériques
+    ECRIRE "Combien de notes ? "
+    LIRE dim
+    REDIM T[dim-1]
+    moy <- 0
+    sup <- 0
+    Pour i <- 0 à dim - 1
+        ECRIRE "Note ", i + 1, " : "
+        LIRE T[i]
+        moy <- moy + T[i]
+    i SUIVANT
+    moy <- moy / dim
+    Pour i <- 0 à dim - 1
+        SI T[i] > moy ALORS
+            sup <- sup + 1
+        FINSI
+    i SUIVANT
+    ECRIRE "Moyenne : ", moy, " Nombre de notes supérieures à la moyenne : ", sup
+Fin
