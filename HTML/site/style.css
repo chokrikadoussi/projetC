@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
+
 :root {
     --noir: #000000;
     --bleu-clair: #87948e;
@@ -12,6 +14,10 @@
     margin: 0;
     padding: 0;
     */
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -37,6 +43,7 @@ main {
 }
 
 h1, h2 {
+    font-family: "Host Grotesk", serif;
     color: var(--bleu-marine);
 }
 
@@ -47,6 +54,12 @@ h3 {
 .lien-accueil {
     color: var(--bleu-marine);
     font-weight: 700;
+}
+
+.lien-liste {
+    color: var(--noir);
+    font-weight: 700;
+    text-decoration: none;
 }
 
 .description {
@@ -67,4 +80,22 @@ h3 {
     color: var(--bleu-marine);
     font-weight: 700;
     font-size: 16px;
+}
+
+.icone {
+    font-size: 1.5rem;
+    color: var(--bleu-marine);
+    margin: 0 5px;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .description {
+        flex-direction: column;
+    }
+
+    .description > img {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+    }
 }

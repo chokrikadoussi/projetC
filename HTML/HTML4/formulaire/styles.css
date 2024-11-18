@@ -1,0 +1,54 @@
+/*** feuille de style ***/
+body{
+		font-family:arial;
+		font-size:14px;
+		background-color:#d9d1c6;
+		margin:0;
+		padding:0;
+	}
+h1, h2{
+	color:#2A455B;
+}
+h3{
+	color:#87948E;
+}
+header,nav,footer,section{
+	background-color:#b9c0c6;
+	width:900px;
+	border:3px solid #ffffff;
+	margin:0 auto 10px auto;
+	padding:5px;
+	border-radius:5px;
+}
+header{
+background-image:url("images/logo.png");
+background-repeat:no-repeat;
+}
+header h1, header h2{
+	margin-left:150px;
+}
+section{
+	background-color:#ffffff;
+}
+nav a{
+color:#2A455B;
+font-size:13px;
+font-weight:bold;
+margin:0 5px;
+padding:8px 10px;
+}
+
+hr{
+	width:400px;
+}
+section img{
+	margin:5px;
+}
+ul{
+	font-size:16px;
+	font-weight:bold;
+	color:#2A455B;
+}
+label{width:120px;display:inline-block;}
+.radio_check label{width:auto;}
+fieldset{margin-bottom:20px;}
