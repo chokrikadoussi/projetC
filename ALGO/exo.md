@@ -635,10 +635,9 @@ Début
         ECRIRE "Valeur ", i + 1, " : "
         LIRE T[i]
     i SUIVANT
-    max <- T[0]
+    index <- 0
     Pour i <- 0 à dim - 1
-        SI T[i] > max ALORS
-            max <- T[i]
+        SI T[i] > T[index] ALORS
             index <- i
         FINSI
     i SUIVANT

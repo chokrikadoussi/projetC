@@ -38,7 +38,7 @@ Début
         SINONSI pere_aristo ALORS
             enf <- pere - 1
         SINON
-            enf <- 0
+            enf <- 0 
         FINSI
 
         SI enf = 1 ALORS
