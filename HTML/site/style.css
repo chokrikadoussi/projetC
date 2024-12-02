@@ -88,6 +88,17 @@ h3 {
     margin: 0 5px;
 }
 
+.formulaire-contact {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.formulaire-contact > input, textarea {
+    margin-bottom: 15px;
+}
+
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     .description {
         flex-direction: column;
@@ -97,5 +108,12 @@ h3 {
         width: 100%;
         height: auto;
         padding: 1rem;
+    }
+
+    .formulaire-contact {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto;
     }
 }

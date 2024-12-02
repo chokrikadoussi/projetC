@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mon CV</title>
+    <meta charset="UTF-8" />
+    <meta name="language" content="fr" />
+    <meta name="description" content="Page de présentation de Prénom Nom" />
+    <meta name="keywords" content="cv, chef de projet, web" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="lien-accueil">
+        <img src="images/logo.png" alt="logo" align="left" />
+      </a>
+      <h1>Chokri Kadoussi</h1>
+      <h2>Chef de projet web</h2>
+    </header>
+
+    <nav>
+      <a href="index.html" class="lien-accueil">Accueil</a>
+      <a href="competences.html" class="lien-accueil">Compétences</a>
+      <a href="contact.html" class="lien-accueil">Contact</a>
+      <a href="medias.html" class="lien-accueil">Média</a>
+    </nav>
+    <main>
+      <form class="formulaire-contact">
+        <label for="prenom">Prénom</label>
+        <input
+          type="text"
+          name="prenom"
+          id="prenom"
+          placeholder="Jean"
+          required
+        />
+        <label for="nom">Nom</label>
+        <input type="text" name="nom" id="nom" placeholder="Dupont" required />
+        <label for="mail">Email</label>
+        <input
+          type="email"
+          name="mail"
+          id="mail"
+          placeholder="jean.dupont@example.com"
+          required
+        />
+        <label for="message">Votre message</label>
+        <textarea name="message" id="message" required></textarea>
+        <input type="submit" value="Envoyer" />
+      </form>
+    </main>
+    <footer>
+      <a href="mailto:mail@domaine.org"
+        ><i class="fa-solid fa-envelope icone"></i
+      ></a>
+      <a href="https://facebook.com/" target="_blank"
+        ><i class="fa-brands fa-facebook icone"></i
+      ></a>
+      <a href="https://x.com/" target="_blank"
+        ><i class="fa-brands fa-twitter icone"></i
+      ></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/ad02441365.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
