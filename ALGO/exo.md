@@ -666,3 +666,55 @@ Début
     i SUIVANT
     ECRIRE "Moyenne : ", moy, " Nombre de notes supérieures à la moyenne : ", sup
 Fin
+
+## Partie 7
+
+### Tri par sélection 
+
+Début
+[Tableau T de N cases] 
+    POUR i <-- 0 à N - 2
+        index <-- i
+        POUR j <-- i + 1 à N - 1
+            SI T[j] < T[index] ALORS
+                index <-- j
+            FINSI
+        j SUIVANT
+        echange <-- T[i]
+        T[i] <-- T[index]
+        T[index] <-- echange
+    i SUIVANT
+Fin
+
+### Tri par sélection 2
+
+Début
+[Tableau T de N cases] 
+    POUR i <-- 0 à N - 2
+        POUR j <-- i + 1 à N - 1
+            SI T[j] < T[i] ALORS
+                echange <-- T[i]
+                T[i] <-- T[j]
+                T[j] <-- echange
+            FINSI
+        j SUIVANT
+    i SUIVANT
+Fin
+
+### Tri à bulles
+
+Début
+    changement <-- VRAI
+    TANTQUE changement
+        changement <-- FAUX
+        POUR i <-- 0 à N - 2
+            SI T[i] > T[i + 1] ALORS
+                base <-- T[i]
+                T[i] <-- T[i+1]
+                T[i+1] <-- base
+                changement <-- VRAI
+            FINSI
+        i SUIVANT
+    FINTANTQUE
+Fin
+
