@@ -718,3 +718,111 @@ Début
     FINTANTQUE
 Fin
 
+## Partie 8
+
+### Exo 1
+
+Début
+    Variables T[5, 12], i, j en numériques
+    POUR i <- 0 à 5
+        POUR j <- 0 à 12
+            T[i, j] <- 0
+        j SUIVANT
+    i SUIVANT
+Fin
+
+### Exo 2
+
+Résultat de l'algo : 1, 2, 3, 4, 5, 6
+
+### Exo 3
+
+Résultat de l'algo : 1, 4, 2, 5, 3, 6
+
+### Exo 4
+
+Résultat de l'algo : 0, 1, 1, 2, 2, 3, 3, 4
+
+### Exo 5
+
+Résultat de l'algo (A) : 1, 2, 3, 4, 5, 6, 7, 8
+Résultat de l'algo (B) : 1, 5, 2, 6, 3, 7, 4, 8
+
+### Exo 6
+
+Début
+    Variables i, j, a, b en numériques
+    a = 0
+    b = 0
+    POUR i <- 0 à 12
+        POUR j <- 0 à 8
+            SI T[i, j] > T[a, b] ALORS
+                a <-- i
+                b <-- j
+            FINSI
+        j SUIVANT
+    i SUIVANT
+Fin
+
+### Exo 7
+
+Début
+    Variables row, col, lim_row, lim_col, mouv en numériques
+    lim_row = 9
+    lim_col = 9
+    row = 10
+    col = 10
+    mouv = -1
+    TANTQUE row > lim_row OU row < 0 OU col > lim_col OU col < 0
+        ECRIRE "Ou se trouve votre pion ? (Ligne puis Colonne)"
+        LIRE row, col
+    FINTANTQUE
+    TANTQUE mouv > 4 OU mouv < 1
+        ECRIRE "Ou allez-vous le déplacer ? (1, 2, 3 ou 4)"
+        LIRE mouv
+    FINTANTQUE
+Fin
+
+## Partie 9
+
+### Exo 2
+
+Début
+    Variable mot en caractères
+    ECRIRE "Entrez un mot :"
+    LIRE mot
+    ECRIRE "Taille de ", mot, " : ", len(mot)
+Fin
+
+### Exo 3
+
+Début
+    Variable phrase en caractères
+    Variables i, compte en numériques
+    ECRIRE "Entrez une phrase :"
+    LIRE phrase
+    compte <- 0
+    POUR i <- 1 à len(phrase)
+        SI mid(phrase, i, 1) == " " ALORS
+            compte <- compte + 1
+        FINSI
+    i SUIVANT
+    ECRIRE "Nombre de mots : ", compte + 1
+Fin
+
+### Exo 4
+
+Début
+    Variables voy[5], phrase en caractères
+    Variable compte en numérique
+
+    voy[0] <- "a"
+    voy[1] <- "e
+    voy[2] <- "i"
+    voy[3] <- "o"
+    voy[4] <- "u"
+    voy[5] <- "y"
+    compte <- 0
+    ECRIRE "Entrez une phrase :"
+    LIRE phrase
+Fin
