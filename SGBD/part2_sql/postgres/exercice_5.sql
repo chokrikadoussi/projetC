@@ -1,0 +1,10 @@
+CREATE TABLE
+    IF NOT EXISTS t_onetau (
+        CODAPP VARCHAR(50),
+        NUMTRA VARCHAR(50),
+        DATVAL VARCHAR(50),
+        INSNAM VARCHAR(50),
+        CODDEV VARCHAR(50),
+        CODCPAMNE VARCHAR(50),
+        MNTNOM VARCHAR(50)
+    ) TABLESPACE data_pise;
