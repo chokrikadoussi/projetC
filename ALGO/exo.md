@@ -718,6 +718,154 @@ Début
     FINTANTQUE
 Fin
 
+
+### Exo 1
+
+Début
+    Variables T[], taille, num en numériques
+    Variables cons, saisi en booléens
+
+    cons = VRAI
+    saisi = VRAI
+    taille = 0
+    TantQue saisi
+        REDIM T[taille]
+        ECRIRE "Entrez un nombre : "
+        LIRE num
+        T[taille] <-- num
+        taille <-- taille + 1
+        SI taille > 0 ET T[taille] != T[taille - 1] + 1 ALORS
+            cons = FAUX
+        FINSI
+        ECRIRE "Continuer ? (vrai/faux)"
+        LIRE saisi
+    FinTantQue
+    ECRIRE "Elements consécutifs : ", cons
+Fin
+
+### Exo 2
+
+Début
+    []
+    POUR i <-- 0 à N-1
+        i_mini <-- i
+        POUR j <-- i + 1 à N 
+            SI T[j] > T[i_mini] ALORS
+                i_mini <-- j
+            FINSI
+        j SUIVANT
+        mouv <-- T[i_mini]
+        T[i_mini] <-- T[i]
+        T[i] <-- mouv
+    i SUIVANT
+Fin
+
+OU 
+
+Début
+    []
+    POUR i <-- 0 à N-1
+        POUR j <-- i+1 à N
+            SI T[j] > T[i] ALORS
+                mouv <-- T[i]
+                T[i] <-- T[j]
+                T[j] <-- mouv
+            FINSI
+        j SUIVANT
+    i SUIVANT
+Fin
+
+ET
+
+Début
+    []
+    continue <-- VRAI
+    TantQue continue
+        continue <-- FAUX
+        POUR i <-- 0 à N-2
+            SI T[i] < T[i + 1] ALORS
+                mouv <-- T[i]
+                T[i] <-- T[i+1]
+                T[i+1] <-- mouv
+                continue <-- VRAI
+            FINSI
+        i SUIVANT
+    FinTantQue
+Fin
+
+### Exo 3
+
+Début
+    []
+    dernier <-- N - 1
+    i <-- 0
+    TantQue i < dernier
+        mouv <-- T[i]
+        T[i] <-- T[dernier]
+        T[dernier] <-- mouv
+
+        i <-- i + 1
+        dernier <-- denier - 1
+    FInTantQue
+Fin
+
+OU
+
+Début
+    POUR i <-- 0 à (N-1)/2
+        mouv <-- T[i] 
+        T[i] <-- T[N-1 - i]
+        T[N-1 - i] <-- mouv
+    i SUIVANT
+Fin
+
+### Exo 4
+
+Début
+    POUR i <-- index à N - 2
+        T[i] <-- T[i+1]
+    i SUIVANT
+    REDIM T[N-1]
+Fin
+
+### Exo 5
+
+Début
+    []
+    ECRIRE "Mot à chercher ? "
+    LIRE mot
+    search <-- VRAI
+    debut <-- 0
+    fin <-- N-1
+    TantQue search ET debut <= fin
+        milieu <-- (debut + fin)/2
+        SI T[milieu] = mot ALORS
+            search <-- FAUX
+        SINONSI T[milieu] > mot ALORS
+            fin <-- milieu
+        SINON
+            debut <-- milieu
+        FINSI
+    FinTantQue
+Fin
+
+### Exo 6
+
+Début
+    []
+    indexA <-- 0
+    indexB <-- 0
+    POUR i <-- 0 à (TailleA + TailleB - 2)
+        SI TabA[indexA] <= Tab[indexB] ALORS
+            T[i] <-- TabA[indexA]
+            indexA <-- indexA + 1
+        SINON
+            T[i] <-- TabB[indexB]
+            indexB <-- indexB + 1
+        FINSI
+    i SUIVANT
+Fin
+
 ## Partie 8
 
 ### Exo 1
@@ -767,20 +915,37 @@ Fin
 ### Exo 7
 
 Début
-    Variables row, col, lim_row, lim_col, mouv en numériques
-    lim_row = 9
-    lim_col = 9
-    row = 10
-    col = 10
-    mouv = -1
-    TANTQUE row > lim_row OU row < 0 OU col > lim_col OU col < 0
-        ECRIRE "Ou se trouve votre pion ? (Ligne puis Colonne)"
-        LIRE row, col
-    FINTANTQUE
-    TANTQUE mouv > 4 OU mouv < 1
-        ECRIRE "Ou allez-vous le déplacer ? (1, 2, 3 ou 4)"
-        LIRE mouv
-    FINTANTQUE
+    Variables row, row_val, col, col_val en numériques
+    Variables damier[9, 9] en caractères
+    ECRIRE "Ou se trouve votre pion ? (ligne, colonne)"
+    LIRE row, col
+    row_val <-- row <= 9 ET row >= 0
+    col_val <-- col <= 9 ET col >= 0
+    ECRIRE "Quel mouvement faire ?"
+    LIRE mouv
+    SI mouv = 0 ALORS
+        row <-- row - 1
+        col <-- col - 1
+    SINONSI mouv = 1 ALORS
+        row <-- row - 1
+        col <-- col + 1
+    SINONSI mouv = 2 ALORS
+        row <-- row + 1
+        col <-- col - 1
+    SINON
+        row <-- row + 1
+        col <-- col + 1
+    FINSI
+    SI row_val ET col_val ALORS
+        POUR i <-- 0 à 9
+            POUR j <-- 0 à 9
+                damier[i, j] <-- "O"
+            j SUIVANT
+        i SUIVANT
+        damier[row, col] <-- "X"
+    SINON
+        ECRIRE "Erreur, pion hors du damier"
+    FINSI
 Fin
 
 ## Partie 9
@@ -803,7 +968,7 @@ Début
     LIRE phrase
     compte <- 0
     POUR i <- 1 à len(phrase)
-        SI mid(phrase, i, 1) == " " ALORS
+        SI mid(phrase, i, 1) = " " ALORS
             compte <- compte + 1
         FINSI
     i SUIVANT
@@ -813,16 +978,180 @@ Fin
 ### Exo 4
 
 Début
-    Variables voy[5], phrase en caractères
-    Variable compte en numérique
-
-    voy[0] <- "a"
-    voy[1] <- "e
-    voy[2] <- "i"
-    voy[3] <- "o"
-    voy[4] <- "u"
-    voy[5] <- "y"
+    Variables  phrase en caractères
+    Variable compte, i en numérique
     compte <- 0
     ECRIRE "Entrez une phrase :"
     LIRE phrase
+    POUR i <- 1 à len(phrase)
+        SI trouve("aeiouy", mid(phrase, i, 1)) != 0 ALORS
+            compte <-- compte + 1
+        FINSI
+    i SUIVANT
 Fin
+
+### Exo 5
+
+Début
+    Variables phrase, gauche, droite en caractère
+    Variable index en numérique
+    ECRIRE "Entrez une phrase : "
+    LIRE phrase
+    ECRIRE "Index du caractère à supprimer : "
+    LIRE index
+    gauche <-- left(phrase, index - 1)
+    droite <-- right(phrase, len(phrase) - index)
+    phrase <-- gauche & droite
+    ECRIRE phrase
+Fin
+
+### Exo 6
+
+Début
+    Variables alpha, lettre, phrase_init, phrase_crypt
+    ECRIRE "Entrez une phrase à crypter : "
+    LIRE phrase_init
+    alpha <-- "abcdefghijklmnopqrstuvwxy"
+    phrase_crypt <-- ""
+    POUR i <-- 1 à len(phrase)
+        lettre <-- mid(phrase, i, 1)
+        SI lettre = "y" ALORS
+            phrase_crypt <-- phrase_crypt & "z"
+        SINON
+            phrase_crypt <-- phrase_crypt & mid(alpha, trouve(alpha, lettre) + 1, 1)
+        FINSI
+    i SUIVANT
+    ECRIRE phrase_crypt
+Fin
+
+### Exo 7
+
+Début
+    Variables alpha, lettre, phrase_init, phrase_crypt en caractère
+    Variable dec en numérique
+    ECRIRE "Entrez une phrase à crypter : "
+    LIRE phrase_init
+    alpha <-- "abcdefghijklmnopqrstuvwxyz"
+    phrase_crypt <-- ""
+    dec <-- 0
+    TantQue dec <= 0 OU dec > 26
+        ECRIRE "Décalage : (>0 ET <=26) "
+        LIRE dec
+    FinTantQue
+    POUR i <-- 1 à len(phrase)
+        lettre <-- mid(phrase, i, 1)
+        SI trouve(alpha, lettre) + dec <= 26 ALORS
+            index_cle <-- trouve(alpha, lettre) + dec
+        SINON
+            index_cle <-- trouve(alpha, lettre) + dec - 26
+        FINSI
+        phrase_crypt <-- phrase_crypt & mid(alpha, index_cle, 1)
+    i SUIVANT
+    ECRIRE phrase_crypt
+Fin
+
+### Exo 8
+
+Début
+    Variables alpha, lettre, phrase_init, phrase_crypt, cle en caractère
+    ECRIRE "Entrez une phrase à crypter : "
+    LIRE phrase_init
+    alpha <-- "abcdefghijklmnopqrstuvwxyz"
+    phrase_crypt <-- ""
+    ECRIRE "Aplhabet-clé : "
+    LIRE cle
+    POUR i <-- 1 à len(phrase)
+        lettre <-- mid(phrase, i, 1)
+        phrase_crypt <-- phrase_crypt & mid(cle, trouve(alpha, lettre), 1)
+    i SUIVANT
+    ECRIRE phrase_crypt
+Fin
+
+### Exo 9
+
+> A TERMINER
+
+Début
+    Variables alpha, lettre, phrase_init, phrase_crypt, cle en caractère
+    Variable dec en numérique
+    ECRIRE "Entrez une phrase à crypter : "
+    LIRE phrase_init
+    alpha <-- "abcdefghijklmnopqrstuvwxyz"
+    phrase_crypt <-- ""
+
+    ECRIRE "Clé "
+    LIRE cle
+
+    POUR i <-- 1 à len(phrase)
+        lettre <-- mid(phrase, i, 1)
+        diff <-- 27 - trouve(alpha, lettre)
+        index_cle <-- trouve() + diff
+
+        phrase_crypt <-- phrase_crypt & mid(alpha, index_cle, 1)
+
+    i SUIVANT
+    ECRIRE phrase_crypt
+Fin
+
+## Partie 11
+
+### Exo 1
+
+Fonction Somme(a, b, c, d, e en numériques) en numérique
+    RENVOYER a + b + c + d + e
+FinFonction
+
+### Exo 2
+
+Fonction NbVoy(phrase en caractère) en numérique
+    Variables voy en caractère
+    Variables i, compte en numériques
+    voy <-- "aeiouy"
+    compte <-- 0
+    POUR i <-- 1 à len(phrase)
+        SI trouve(voy, mid(phrase, i, 1)) != 0 ALORS
+            compte <- compte + 1
+        FINSI
+    i SUIVANT
+    RENVOYER compte
+FinFonction
+
+### Exo 3
+
+Fonction Trouve(texte, lettre en caractères) en numérique
+    Variable i en numérique
+    POUR i <-- 1 à len(texte) - len(lettre)
+        SI mid(texte, i, len(lettre)) = lettre ALORS
+            RENVOYER i
+        FINSI
+    i SUIVANT
+        RENVOYER 0
+FinFonction
+
+### Exo 4
+
+Fonction Purge(texte_init, lettre en caractères) en caractère
+    Variable texte_purge en caractère
+    Variable i en numérique
+    texte_purge <-- ""
+    POUR i <-- 1 à len(texte_init)
+        SI mid(texte_init, i, 1) != lettre ALORS
+            texte_purge <-- texte_purge & mid(texte_init, i, 1)
+        FINSI
+    i SUIVANT
+    RENVOYER texte_purge
+FinFonction
+
+### Exo 5
+
+Fonction PurgeBis(texte_init, supp en caractères) en caractère
+    Variable texte_purge en caractère
+    Variable i en numérique
+    texte_purge <-- ""
+    POUR i <-- 1 à len(texte_init)
+        SI trouve(supp, mid(texte_init, i, 1)) = 0 ALORS
+            texte_purge <-- texte_purge & mid(texte_init, i, 1)
+        FINSI
+    i SUIVANT
+    RENVOYER texte_purge
+FinFonction
