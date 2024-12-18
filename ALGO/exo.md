@@ -1272,4 +1272,30 @@ Fonction VerifColonnes() en booléen
     RENVOYER flag
 FinFonction
 
+Fonction VerifSousGrilles() en booléen
+    Variables i, j, Tab[8] en numériques
+    Variables flag en booléen
+    flag <-- Vrai
 
+    POUR sg <-- 0 à 8 par pas de 3
+        0
+        POUR i <-- sg à sg+2
+            POUR j <-- x à x
+
+            j SUIVANT
+        i SUIVANT
+        3
+        6
+    sg SUIVANT
+
+
+    POUR i <-- 0 à 8
+        POUR j <-- 0 à 8
+            Tab[i] <-- Grille[j][i]
+        j SUIVANT
+        SI Non TousDifferents(Tab[]) ALORS
+            flag <-- Faux
+        FINSI
+    i SUIVANT
+    RENVOYER flag
+FinFonction
