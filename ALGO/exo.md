@@ -1155,3 +1155,121 @@ Fonction PurgeBis(texte_init, supp en caractères) en caractère
     i SUIVANT
     RENVOYER texte_purge
 FinFonction
+
+### Exo 6
+
+Procédure Tri(Tab en numérique par réf, long en numérique par val)
+    Variables temp, i en numérique
+    Variable chang en booléen
+    change <-- Vrai
+    TantQue change
+        chang <-- Faux
+        POUR i <-- 0 à long - 2
+            SI Tab[i] > Tab[i + 1] ALORS
+                temp <-- Tab[i]
+                Tab[i] <-- Tab[i + 1]
+                Tab[i + 1] <-- temp
+                change <-- Vrai
+            FINSI
+        i SUIVANT
+    FinTantQue
+FinProcédure
+
+### Exo 7
+
+Fonction Consecutif(Tab en numérique) en booléen
+    Variable range en booléen
+    Variable long en numérique
+    ECRIRE "Nombre d'éléments du tableau : "
+    LIRE long
+    range <-- Vrai
+    POUR i <-- 0 à long - 2
+        SI Tab[i] > Tab[i + 1] ALORS
+            range <-- Faux
+        FINSI
+    i SUIVANT
+    RENVOYER range
+FinFonction
+
+### Exo 8
+
+Procédure Inverse(A, B en numérique par référence)
+    Variable temp en numérique
+    temp <-- A
+    A <-- B
+    B <-- temp
+FinProcédure
+
+### Exo 9
+
+Procédure Tri_ord(Tab en num par ref, long en num par val, croiss en bool par val)
+    Variables temp, i, j en numériques
+    POUR i <-- 0 à long-2
+        POUR j <-- i+1 à long-1
+            SI croiss ET Tab[j] < Tab[i] OU Non croiss ET Tab[j] > Tab[i] ALORS
+                temp <-- Tab[i]
+                Tab[i] <-- Tab[j]
+                Tab[j] <-- temp
+            FINSI
+        j SUIVANT
+    i SUIVANT
+FinProcédure
+
+### Exo 10
+
+Variable Grille[8][8] en numérique
+
+Fonction TousDifferents(Tab[] en num) en booléen
+    Variables i, j en num
+    Variables flag en booléen
+    flag <-- Vrai
+    POUR i <-- 0 à 7
+        POUR j <-- i+1 à 8
+            SI Tab[i] = Tab[j] ALORS
+                flag <-- Faux
+            FINSI
+        j SUIVANT
+    i SUIVANT
+    RENVOYER flag
+FinFonction
+
+Procédure RemplitGrille(Grille en num par ref)
+    Variables i, j en numériques
+    POUR i <-- 0 à 8
+        POUR j <-- 0 à 8
+            Grille[i][j] <-- ent(alea()*9)+1
+        j SUIVANT
+    i SUIVANT
+Fin Procédure
+
+Fonction VerifLignes() en booléen
+    Variables i, j, Tab[8] en numériques
+    Variables flag en booléen
+    flag <-- Vrai
+    POUR i <-- 0 à 8
+        POUR j <-- 0 à 8
+            Tab[i] <-- Grille[i][j]
+        j SUIVANT
+        SI Non TousDifferents(Tab[]) ALORS
+            flag <-- Faux
+        FINSI
+    i SUIVANT
+    RENVOYER flag
+FinFonction
+
+Fonction VerifColonnes() en booléen
+    Variables i, j, Tab[8] en numériques
+    Variables flag en booléen
+    flag <-- Vrai
+    POUR i <-- 0 à 8
+        POUR j <-- 0 à 8
+            Tab[i] <-- Grille[j][i]
+        j SUIVANT
+        SI Non TousDifferents(Tab[]) ALORS
+            flag <-- Faux
+        FINSI
+    i SUIVANT
+    RENVOYER flag
+FinFonction
+
+
