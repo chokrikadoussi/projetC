@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Mon CV - Contact</title>
+	  <meta charset="UTF-8"/>
+	  <meta name="language" content="fr">
+	  <meta name="description" content="Page de présentation de Prénom Nom">
+	  <meta name="keywords" content="cv, chef de projet, web">
+	<link rel="stylesheet" href="styles.css">
+   </head>
+   
+   <body>
+		  <header>
+				<a href="index.html"><img src="images/logo.png" alt="Prénom Nom" align="left"></a>
+				<h1>Prénom Nom</h1>
+				<h2>Chef de projet</h2>
+		  </header>
+	  
+		   <nav>
+				<a href="index.html">Accueil</a>
+				<a href="competences.html">Compétences</a>
+				<a href="medias.html">Médias</a>
+				<a href="contact.html" class="rubrique_active">Contact</a>
+		  </nav> 
+	  
+		<main>
+			<h1>Contact</h1>
+			<form>
+				<p>
+					<select id="civilite" name="variable-civilite" required>
+						<option value="">Choisissez</option>
+						<option value="Mme">Madame</option>
+						<option value="M">Monsieur</option>
+					</select>
+				</p>
+				<p>
+					<label for="prenom">Prénom</label>
+					<input type="text" required id="prenom" name="variable-prenom" placeholder="Saisissez votre prénom">
+				</p>
+				<p>
+					<label for="nom">Nom</label>
+					<input type="text" required id="nom" name="variable-nom" placeholder="Saisissez votre nom">
+				</p>
+				<p>
+					<label for="email">Email</label>
+					<input type="email" required id="email" name="variable-email" placeholder="Saisissez votre email">
+				</p>
+				<p>
+					<label for="message">Message</label><br>
+					<textarea required id="message" name="variable-message" placeholder="Saisissez un message"></textarea>
+				</p>
+				<p><input type="submit" value="Envoyer le message"></p>
+			</form>
+		</main>
+	  
+	  <footer>
+		 <a href="mailto:mail@domaine.org"><img src="images/mail.png" alt="Contatez moi"></a>
+		 <a href="http://www.facebook.com" target="_blank"><img src="images/facebook.png" alt="Vissitez ma page Facebook"></a>
+		 <a href="http://www.twitter.com" target="_blank"><img src="images/twitter.png" alt="Vissitez mon compte"></a>
+	  </footer>
+	  
+   </body>
+</html>
