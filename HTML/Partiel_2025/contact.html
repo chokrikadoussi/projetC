@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Bienvenue sur le site du Comics books store !"
+    />
+    <meta name="keywords" content="Comics, Librairie, BD, livre" />
+    <title>Accueil | Comics Books Store</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="flex-center">
+      <a href="index.html"><img src="images/logo.png" alt="logo du store" /></a>
+    </header>
+    <nav class="flex-center">
+      <a href="index.html">Accueil</a>
+      <a href="catalogue.html">Catalogue</a>
+      <a href="goodies.html">Goodies</a>
+      <a href="contact.html" class="actif">Contact</a>
+    </nav>
+
+    <main>
+      <h1>Contact</h1>
+      <p>
+        Pour toute question, suggestion ou demande d'information, n'hésitez pas
+        à nous contacter.
+      </p>
+      <form action="envoi-message.php" method="post">
+        <div class="contact-grid-form">
+          <label for="nom">Votre nom</label>
+          <input
+            type="text"
+            name="nom"
+            id="nom"
+            required
+            placeholder="Saissez votre nom"
+            class="contact-input"
+          />
+
+          <label for="prenom">Votre prénom</label>
+          <input
+            type="text"
+            name="prenom"
+            id="prenom"
+            required
+            placeholder="Saissez votre prénom"
+            class="contact-input"
+          />
+
+          <label for="mail">Votre email</label>
+          <input
+            type="email"
+            name="mail"
+            id="mail"
+            required
+            placeholder="Saissez votre email"
+            class="contact-input"
+          />
+
+          <label for="objet">Objet</label>
+          <select name="objet" id="objet" class="contact-input">
+            <option value="selection">Sélectionnez</option>
+            <option value="achats">Achats</option>
+            <option value="infos">Informations</option>
+            <option value="autre">Autres</option>
+          </select>
+        </div>
+        <br />
+        <div class="contact-champs-form">
+          <label for="message">Votre message</label><br />
+          <textarea
+            name="message"
+            id="message"
+            class="contact-input textarea-form"
+          ></textarea>
+        </div>
+        <br />
+        <div class="contact-boutton-form">
+          <input type="reset" value="Réinitialiser" class="contact-input" />
+          <input
+            type="submit"
+            value="J’envoie mon message"
+            class="contact-input"
+          />
+        </div>
+      </form>
+      <br />
+    </main>
+
+    <footer class="flex-center">
+      <div class="lien-reseau">
+        <a href="https://www.youtube.com/" target="_blank"
+          ><img src="images/youtube.png" alt="logo youtube"
+        /></a>
+        <a href="https://www.instagram.com/" target="_blank"
+          ><img src="images/instagram.png" alt="logo instagram"
+        /></a>
+        <a href="https://wa.me/" target="_blank"
+          ><img src="images/whatsapp.png" alt="logo whatsapp"
+        /></a>
+      </div>
+      <p>Site créé par Chokri KADOUSSI</p>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/ad02441365.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
