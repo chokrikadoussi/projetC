@@ -1299,3 +1299,63 @@ Fonction VerifSousGrilles() en booléen
     i SUIVANT
     RENVOYER flag
 FinFonction
+
+
+### Exo 10 - Deuxieme tentative
+
+Procédure Principale()
+
+    Variable Globale Grille[8][8] en numérique
+
+Fin Procédure
+
+Fonction TousDifférents(Tab[8] en num) en booléen
+    Variables i, j en numériques
+    POUR i <-- 0 à 7
+        POUR j <-- i+1 à 8
+            SI Tab[i] = Tab[j] ALORS
+                RENVOYER Faux
+            FINSI
+        j SUIVANT
+    i SUIVANT
+    RENVOYER Vrai
+Fin Fonction
+
+Procédure RemplitGrille(Grille[] en num par ref)
+    Variables i, j en numériques
+    POUR i <-- 0 à 8
+        POUR j <-- 0 à 8
+            Grille[i][j] <-- Ent(Alea() * 9 + 1)
+        j SUIVANT
+    i SUIVANT
+Fin Procédure
+
+Fonction VerifLignes(T[8][8] en num) en booléen
+    Variables i, j, Ligne[8] en numériques
+    POUR i <-- 0 à 8
+        POUR j <-- 0 à 8
+            Ligne[j] <-- T[i][j]
+        j SUIVANT
+        SI Non TousDifférents(Ligne[]) ALORS
+            RENVOYER Faux
+        FINSI
+    i SUIVANT
+    RENVOYER Vrai
+Fin Fonction
+
+Fonction VerifColonnes(T[8][8] en num) en booléen
+    Variables i, j, Col[8] en numériques
+    POUR i <-- 0 à 8
+        POUR j <-- 0 à 8
+            Col[j] <-- T[j][i]
+        j SUIVANT
+        SI Non TousDifférents(Col[]) ALORS
+            RENVOYER Faux
+        FINSI
+    i SUIVANT
+    RENVOYER Vrai
+Fin Fonction
+
+Fonction VerifSousGrilles() en booléen
+
+Fin Fonction
