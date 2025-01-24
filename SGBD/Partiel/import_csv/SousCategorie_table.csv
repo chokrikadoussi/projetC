@@ -1,0 +1,41 @@
+IDT_SS_CATEGORIE;LIBELLE_SS_CATEGORIE;IDT_CATEGORIE
+1;TVA;1
+2;TVS ;1
+3;IS (Impôt sur la Société) ;1
+4;CFE ;1
+5;RSI ;1
+6;URSSAF ;1
+7;CIPAV ;1
+8;Amende ;1
+9;Loyer leasing (LLD ou LOA) ;2
+10;Carburant;2
+11;Réparation auto;2
+12;Péage;2
+13;Achat nouvelle clé;2
+14;Révision auto;2
+15;Restauration;3
+16;Facture Cantine;3
+17;HISCOX;4
+18;MAAF;4
+19;MACIF;4
+20;Abonnement logiciel;5
+21;Achat matériel informatique;5
+22;Achat licence logiciel informatique;5
+23;Achat cours en ligne;6
+24;Achat Livres ;6
+25;Création entreprise;7
+26;Facture Comptable ;7
+27;Achat KBIS;7
+28;Dépot de compte annuels;7
+29;Facture juridique ;7
+30;Frais bancaires;7
+31;achat vetement;8
+32;EDF;8
+33;Forfait mobile;8
+34;Forfait internet;8
+35;Forfait box;8
+36;Séjour professionnel;8
+37;Salaire;9
+38;Avance sur salaire;9
+39;Facture client;10
+40;Dépense non classifiée;11

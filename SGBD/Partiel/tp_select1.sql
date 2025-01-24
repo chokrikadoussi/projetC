@@ -1,0 +1,12 @@
+SELECT
+    COUNT(*) AS "Nombre ecriture",
+    SUM(HT) AS "Total HC",
+    SUM(TVA) AS "Total TVA",
+    SUM(TTC) AS "Total TTC",
+    EXERCICE_COMPTABLE AS "Annee Comptable"
+FROM
+    ECRITURE
+GROUP BY
+    EXERCICE_COMPTABLE
+ORDER BY
+    EXERCICE_COMPTABLE DESC;
