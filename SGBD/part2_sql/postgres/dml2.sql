@@ -1,5 +1,0 @@
-DELETE *
-FROM
-    TCLIBDR
-WHERE
-    UPPER(nomvil) LIKE '-%';

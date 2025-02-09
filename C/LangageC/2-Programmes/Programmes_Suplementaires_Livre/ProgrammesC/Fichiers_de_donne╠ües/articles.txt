@@ -1,1 +1,0 @@
-jogging 19.99 50running 110 20ballon 12.5 120short 10 30balles 1.5 150

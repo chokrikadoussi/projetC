@@ -1,1 +1,0 @@
-# Liste des fichiers objetsOBJETS= calc_prog.o calc_s_prog.ocalcul: $(OBJETS)	cc -o calcul $(OBJETS)calc_prog.o: calc_prog.c declaration.h	cc -c calc_prog.ccalc_s_prog.o: calc_s_prog.c	cc -c calc_s_prog.c
